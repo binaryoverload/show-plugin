@@ -1,0 +1,15 @@
+language: java
+jdk:
+- oraclejdk8
+script:
+- mvn clean package
+deploy:
+  provider: releases
+  api_key:
+    secure: VxNBFYXgwADfXa4jgcrqGDe5X6EgXFzlKG6HAKxfnQQwQkO7I8U2COztOAx25JSo5CKwbPstTl00FBCvO/ctFbJJ+APevdTA4w3Ss/pgmkplC7X43xVHnn4hneMiVbffyD1KjfgHLnYtph5rDfCc9ujyD9MHpceJEh/2KCNV+SNnE0ebs9+JvCvwCTgu5DifGv/+bPiq+NjQnP6m4pyjFjQhFXo0CozyUIq7dKQ1Kv46oPa0PXVvpR/U/C7dRne75HYtdkvMP7ZbveARMXxbPZaUOGjHysnyAL+nC3a5NEXI03DN7OEULg+ZURzRLuVIs5c0sUGA7UdCLecfQHXVIUrAfJnZQ7ajzK9hKBHlqL1LiZphZEEh/ErrfGceiMqRQCSiNgkKxPN01nhO4b672n4SX0msx6RuzNtHg90Vlbsm3mMcR6iAfJWiALsBEM9rLEcDmUR9obNd93AYhPa4jW5iS/m8/NbVLiX3lFRg5lvYSS3643YjDeMAFTqJgcC0U/52ir4HXrTxeTV8TT8RGPXJYJUhBvQ+jxBgmK1X7qkyulKxuQqSFfYBfYZvw5RznBMAsJ35bcVahKaJwQw3V3UUH3NqWBPXFWCaZ03AEW+vgD0nsfuzxqBycqvhhdo9E4cpGXPUX1MnGNedy+W/FdWopiWl9W2ZDbvkcxhtwGk=
+  file: target/show-plugin.jar
+  skip_cleanup: true
+  on:
+    repo: binaryoverload/show-plugin
+    tags: true
+    all_branches: true
